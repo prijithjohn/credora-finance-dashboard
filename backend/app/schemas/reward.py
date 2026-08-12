@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 
 
 class RewardRead(BaseModel):
@@ -20,12 +20,16 @@ class RewardSummary(BaseModel):
 
 
 class RewardRedemptionRequest(BaseModel):
-    reward_id: int
-    user_id: int = 1
+    reward_id: int = Field(..., gt=0)
+    user_id: int = Field(default=1, gt=0)
 
 
 class RewardRedemptionResponse(BaseModel):
     success: bool
     message: str
+    reward_id: int | None = None
     reward_name: str | None = None
+    user_id: int | None = None
+    redemption_id: int | None = None
+    coins_spent: int | None = None
     remaining_balance: int | None = None
