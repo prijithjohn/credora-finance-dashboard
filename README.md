@@ -245,33 +245,57 @@ This behavior is enforced in the service layer and protected by the repository-l
 
 ## Local Development
 
+This project is designed to be started locally in under five minutes for a demo or assessment flow.
+
 ### Prerequisites
 
 - Python 3.10-compatible environment
 - Node.js and npm
 - PostgreSQL instance or Docker Compose-based PostgreSQL service
 
-### Backend
+### 1) Start PostgreSQL
+
+```bash
+docker compose up -d postgres
+```
+
+The Docker Compose file creates a local PostgreSQL container on port `5432` with database `credora`, user `postgres`, and password `postgres`.
+
+### 2) Configure backend environment
 
 ```bash
 cd backend
-python -m venv .venv
-# Windows
-.venv\Scripts\activate
-# macOS/Linux
-source .venv/bin/activate
-
-pip install -r requirements.txt
 cp .env.example .env
 # set DATABASE_URL=<your_database_url>
+```
 
+The project default is defined in `backend/.env.example` and points to PostgreSQL.
+
+### 3) Run migrations
+
+```bash
+cd backend
 alembic upgrade head
+```
+
+### 4) Seed the database
+
+```bash
+cd backend
+python app/seed/phase1.py
+```
+
+This seeds the demo user and reward catalogue and loads the transaction dataset from `data/transactions.json` into PostgreSQL.
+
+### 5) Start the backend
+
+```bash
+cd backend
+# activate your environment if required
 uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload
 ```
 
-The repository includes a sample backend environment file at `backend/.env.example`. The application also uses `DATABASE_URL` from the environment to connect to PostgreSQL.
-
-### Frontend
+### 6) Start the frontend
 
 ```bash
 cd frontend
@@ -385,9 +409,42 @@ Screenshots can be added here for:
 - Analytics
 - Light/Dark themes
 
-## Demo / Deployment
+## Live Demo
 
-> Live deployment: Not currently provided.
+Frontend:
+<ADD_DEPLOYED_FRONTEND_URL>
+
+Backend:
+<ADD_DEPLOYED_BACKEND_URL>
+
+Demo Video:
+<ADD_DEMO_VIDEO_URL>
+
+> No production deployment URL was found in the repository. The placeholders above are intentionally left for submission or deployment setup.
+
+## Done
+
+- PostgreSQL-backed transaction ingestion and seed flow
+- transaction API with list and detail routes
+- pagination, filtering, and sorting for transactions
+- analytics dashboard with spend trend and category breakdown
+- rewards catalogue and balance display
+- reward redemption flow with validation and balance updates
+- responsive UI for desktop, tablet, and mobile screens
+- light/dark theme support
+- INR formatting throughout the dashboard
+- automated backend tests and frontend lint/typecheck/build checks
+
+## Not Done
+
+- Production deployment configuration
+- Authentication or user session management
+- Advanced reporting/export features
+- CI/CD pipeline configuration
+
+## Known Issues
+
+None known at the time of submission.
 
 ## License
 
