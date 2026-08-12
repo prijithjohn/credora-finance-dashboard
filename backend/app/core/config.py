@@ -9,7 +9,7 @@ class Settings(BaseSettings):
     environment: str = 'development'
     api_v1_prefix: str = '/api/v1'
     database_url: str = Field(
-        default='postgresql+psycopg://postgres:postgres@localhost:5432/credora',
+        default='postgresql+psycopg://credora:credora_pass@localhost:5434/credora',
         alias='DATABASE_URL',
     )
 
