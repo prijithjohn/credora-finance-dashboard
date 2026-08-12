@@ -1,0 +1,38 @@
+# Root-level project ignores
+.DS_Store
+.env
+.env.*
+!.env.example
+
+# Node / Next.js
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.vercel/
+frontend/coverage/
+
+# Python / FastAPI
+backend/.venv/
+backend/__pycache__/
+backend/**/__pycache__/
+backend/.pytest_cache/
+backend/.ruff_cache/
+backend/.mypy_cache/
+backend/.coverage
+backend/coverage/
+backend/.env
+backend/.env.*
+!backend/.env.example
+
+# General tooling
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.venv/
+__pycache__/
+.pytest_cache/
+
+# Local AI instructions
+.github/copilot-instructions.md
