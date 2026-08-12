@@ -532,7 +532,7 @@ Vercel
 Live URL:
 
 ```text
-<YOUR_VERCEL_URL>
+https://credora-finance-dashboard-dqy0lu62r-prijithjohns-projects.vercel.app/
 ```
 
 ## Backend
@@ -586,29 +586,27 @@ Supabase PostgreSQL
 
 ## Dashboard
 
-![Credora Dashboard](docs/screenshots/dashboard.png)
+![Credora Dashboard](docs/Dashboard.png)
 
 ## Transactions
 
-![Transactions](docs/screenshots/transactions.png)
+![Transactions](docs/Transaction.png)
 
 ## Analytics
 
-![Analytics](docs/screenshots/analytics.png)
+![Analytics](docs/Analysis.png)
 
 ## Rewards
 
-![Rewards](docs/screenshots/rewards.png)
+![Rewards](docs/Rewards.png)
 
 ## Light Mode
 
-![Light Mode](docs/screenshots/light-mode.png)
+![Light Mode](docs/Mode.png)
 
 ## Dark Mode
 
-![Dark Mode](docs/screenshots/dark-mode.png)
-
-> Add the screenshots to `docs/screenshots/` using the filenames above.
+![Dark Mode](docs/Dashboard.png)
 
 ---
 
@@ -628,7 +626,7 @@ A short walkthrough demonstrates:
 
 **Watch the demo:**
 
-`<YOUR_DEMO_VIDEO_URL>`
+(https://drive.google.com/file/d/1azwUT_ZrrrPty8z2viSWIWC34leqyR9z/view?usp=sharing)
 
 ---
 
