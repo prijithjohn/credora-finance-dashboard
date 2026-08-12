@@ -36,3 +36,5 @@ __pycache__/
 
 # Local AI instructions
 .github/copilot-instructions.md
+*.tsbuildinfo
+

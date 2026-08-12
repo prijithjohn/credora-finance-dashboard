@@ -1,9 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
   color-scheme: light;
+  --bg: #f5f2ec;
+  --surface: #fffdf9;
+  --surface-elevated: #f9f5f0;
+  --border: rgba(28, 35, 33, 0.1);
+  --text: #171b1a;
+  --text-secondary: #4d5655;
+  --text-muted: #6a7673;
+  --primary: #1f7a5f;
+  --primary-hover: #185d49;
+  --primary-subtle: rgba(31, 122, 95, 0.12);
+  --success: #1f8f6b;
+  --warning: #b76d1d;
+  --danger: #c14452;
+  --info: #2d6f9e;
+  --shadow-soft: 0 14px 32px rgba(23, 27, 26, 0.06);
+  --shadow-card: 0 10px 24px rgba(23, 27, 26, 0.04);
+  --radius-sm: 0.75rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-xl: 2rem;
+  --transition: 180ms ease;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #171918;
+  --surface: #202321;
+  --surface-elevated: #262a27;
+  --border: rgba(255, 255, 255, 0.08);
+  --text: #f3f2ee;
+  --text-secondary: #c2c6c4;
+  --text-muted: #8b918f;
+  --primary: #63c69b;
+  --primary-hover: #7ad1a9;
+  --primary-subtle: rgba(99, 198, 155, 0.12);
+  --success: #75d0a9;
+  --warning: #e1a766;
+  --danger: #eb7983;
+  --info: #7bb4d6;
+  --shadow-soft: 0 18px 38px rgba(0, 0, 0, 0.18);
+  --shadow-card: 0 10px 24px rgba(0, 0, 0, 0.12);
 }
 
 html {
@@ -11,5 +54,35 @@ html {
 }
 
 body {
-  @apply bg-slate-50 text-slate-900 antialiased;
+  @apply antialiased;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Manrope', sans-serif;
+  min-height: 100vh;
+  font-variant-numeric: tabular-nums;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: rgba(31, 122, 95, 0.2);
+}
+
+@layer utilities {
+  .container-shell {
+    @apply mx-auto w-full max-w-6xl;
+  }
 }
